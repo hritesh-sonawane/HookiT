@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NewTask from "../Presentational/NewTask";
 import TasksList from "../Presentational/TasksList";
+import EditProfile from "../Presentational/EditProfile";
 
 export default function AppFunction() {
   const [newTask, setNewTask] = useState({});
@@ -22,6 +23,7 @@ export default function AppFunction() {
 
   return (
     <main>
+      <EditProfile />
       <h1>Tasks</h1>
       <NewTask
         newTask={newTask}
