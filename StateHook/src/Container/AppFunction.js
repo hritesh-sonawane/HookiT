@@ -4,13 +4,13 @@ import TasksList from "../Presentational/TasksList";
 import EditProfile from "../Presentational/EditProfile";
 
 export default function AppFunction() {
-  const [newTask, setNewTask] = useState({});
+  const [newTask, setNewTask] = useState({}); // object in state
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setNewTask((prev) => ({ ...prev, id: Date.now(), [name]: value }));
   };
 
-  const [allTasks, setAllTasks] = useState([]);
+  const [allTasks, setAllTasks] = useState([]); // array in state
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!newTask.title) return;

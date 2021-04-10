@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function EditProfile() {
-  const [profile, setProfile] = useState({});
+  const [profile, setProfile] = useState({}); //object in state
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
