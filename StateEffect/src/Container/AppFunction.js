@@ -3,6 +3,7 @@ import NewTask from "../Presentational/NewTask";
 import TasksList from "../Presentational/TasksList";
 import EditProfile from "../Presentational/EditProfile";
 import PageTitle from "../Presentational/PageTitle";
+import Counter from "../Presentational/Counter";
 
 export default function AppFunction() {
   const [newTask, setNewTask] = useState({}); // object in state
@@ -25,6 +26,8 @@ export default function AppFunction() {
   return (
     <main>
       <PageTitle />
+      <br />
+      <Counter />
       <br />
       <EditProfile />
       <h1>Tasks</h1>
