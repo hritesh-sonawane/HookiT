@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { get } from "./mockBackend/fetch";
+import { get } from "../MockBackend/fetch";
 
 export default function Forecast() {
   const [data, setData] = useState();
@@ -10,14 +10,19 @@ export default function Forecast() {
     alert("Requested data from server...");
     get("/daily").then((response) => {
       alert("Response: " + JSON.stringify(response, "", 2));
+      setData(response.data);
     });
-  });
+  }, [forecastType]);
 
-  const handleChange = (index) => ({ target }) =>
+  const handleChange = (itemId) => ({ target }) =>
     setNotes((prev) => ({
       ...prev,
-      [index]: target.value,
+      [itemId]: target.value,
     }));
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="App">
@@ -36,7 +41,7 @@ export default function Forecast() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, i) => (
+          {data.map((item) => (
             <tr key={item.id}>
               <td>{item.summary}</td>
               <td> {item.temp.avg}°F</td>
