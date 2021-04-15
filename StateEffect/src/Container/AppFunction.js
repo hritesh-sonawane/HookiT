@@ -5,6 +5,7 @@ import EditProfile from "../Presentational/EditProfile";
 import PageTitle from "../Presentational/PageTitle";
 import Counter from "../Presentational/Counter";
 import Timer from "../Presentational/Timer";
+import Forecast from "../Presentational/Forecast";
 
 export default function AppFunction() {
   const [newTask, setNewTask] = useState({}); // object in state
@@ -29,6 +30,8 @@ export default function AppFunction() {
       <Timer />
       <br />
       <PageTitle />
+      <br />
+      <Forecast />
       <br />
       <Counter />
       <br />
