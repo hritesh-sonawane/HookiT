@@ -6,6 +6,7 @@ import PageTitle from "../Presentational/PageTitle";
 import Counter from "../Presentational/Counter";
 import Timer from "../Presentational/Timer";
 import Shop from "../Presentational/Shop";
+import SocialNetwork from "../Presentational/SocialNetwork";
 
 export default function AppFunction() {
   const [newTask, setNewTask] = useState({}); // object in state
@@ -29,9 +30,9 @@ export default function AppFunction() {
     <main>
       <Timer />
       <br />
-      <PageTitle />
+      <SocialNetwork />
       <br />
-      <Shop />
+      <PageTitle />
       <br />
       <Counter />
       <br />
