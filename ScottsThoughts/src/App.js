@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import { AddThoughtForm } from "./AddThoughtForm";
 import { Thought } from "./Thought";
 import { generateId, getNewExpirationTime } from "./utilities";
@@ -18,13 +17,17 @@ export default function App() {
     },
   ]);
 
+  const addThought = (thought) => {
+    setThoughts((prev) => [thought, ...prev]);
+  };
+
   return (
     <div className="App">
       <header>
         <h1>Scotts Thoughts</h1>
       </header>
       <main>
-        <AddThoughtForm />
+        <AddThoughtForm addThought={addThought} />
         <ul className="thoughts">
           {thoughts.map((thought) => (
             <Thought key={thought.id} thought={thought} />

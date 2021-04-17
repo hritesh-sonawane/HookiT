@@ -8,15 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-input,
-button {
-  font: inherit;
-  box-sizing: border-box;
-}
-
 input[type="submit"],
 button {
   cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
 }
 
 .App {
